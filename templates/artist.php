@@ -26,12 +26,14 @@ get_header(); ?>
       if ( $parent->have_posts() ) : ?>
         <div class="feat-image"><?php  the_post_thumbnail(); ?></div>
         <div class="wrap">
-        <div class="titles-voil">
-                <h1 class="title-voil"><?php echo get_the_title($post->post_parent); ?></h1>
-                <p>
-                    <span class="show-title-voil"><?php //echo $invo; ?></span>
-                </p>
-            </div>
+					<?php $pllid =  pll_get_post($post->ID)?>
+				 <?php $invo = get_post_meta($pllid,'show_title_voil',true)?>
+				 <div class="titles-voil">
+						 <h1 class="title-voil"><?php echo get_the_title($post->post_parent); ?></h1>
+						 <p>
+								 <span class="show-title-voil"><?php echo $invo; ?></span>
+						 </p>
+				 </div>
 
 <div class="content-voil">
 				<?php //the_content(); ?>

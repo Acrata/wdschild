@@ -18,9 +18,12 @@ textarea {
 
 h1,
 .h1 {
-
+	color:$color-voil;
+	text-transform: capitalize;
 } // h1, .h1
-
+h1.title-voil {
+	margin-bottom: 0px;
+}// h1.title-voil
 h2,
 .h2 {
 
@@ -28,7 +31,8 @@ h2,
 
 h3,
 .h3 {
-
+	text-transform: capitalize;
+	color:$color-voil;
 } // h3, .h3
 
 h4,
@@ -52,6 +56,8 @@ h6,
 
 p {
 	margin: 0 0 rem(24) 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	color:#666666;
 } // p
 
 b,
@@ -144,3 +150,17 @@ big {
 .widget {
 	@include word-break;
 } // .entry-title, .entry-content, .comments-title, .comment-content, .widget-title, .widget
+
+span.show-title-voil {
+	font-weight: 300;
+	font-style: italic;
+	font-size: 1.3em;
+	color: $color-voil;
+	margin-bottom: 0px;
+}
+.titles-voil p {
+	margin-bottom: 0px;
+}
+.art-info-items span {
+	color:$color-voil;
+}

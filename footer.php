@@ -23,6 +23,7 @@
 		</div><!-- .wrap -->
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
+</div><!--.wrapper-vv-->
 
 <?php //echo wp_kses_post( wds_voilarts_get_mobile_navigation_menu() ); ?>
 

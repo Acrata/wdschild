@@ -24,7 +24,7 @@ window.teMenu = {};
 
     app.te = function () {
         console.log("offman");
-$( "#trigger button" ).click(function() {
+$( "#trigger p" ).click(function() {
   $(".wrapper-vv").toggleClass("is-open");
 });
     }

@@ -36,6 +36,7 @@
     "gulp.spritesmith": "latest"
   },
   "devDependencies": {
+    "lost": "^8.0.0",
     "postcss-utilities": "^0.6.1"
   },
   "scripts": {

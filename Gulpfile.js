@@ -16,6 +16,7 @@ const neat = require( 'bourbon-neat' ).includePaths;
 const notify = require( 'gulp-notify' );
 const plumber = require( 'gulp-plumber' );
 const postcss = require( 'gulp-postcss' );
+const lost = require( 'lost' );
 const reload = browserSync.reload;
 const rename = require( 'gulp-rename' );
 const sass = require( 'gulp-sass' );
@@ -93,6 +94,7 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 			// Parse with PostCSS plugins.
 			.pipe( postcss( [
 				utilpost,
+				lost,
 				autoprefixer( {
 					'browsers': [ 'last 2 version' ]
 				} ),
@@ -333,7 +335,7 @@ gulp.task( 'watch', function () {
 	browserSync( {
 		'open': false,             // Open project in a new tab?
 		'injectChanges': true,     // Auto inject changes instead of full reload.
-		'proxy': 'http://localhost:8888/voilarts',    // Use https://webdevstudios.com/:3000 to use BrowserSync.
+		'proxy': 'http://localhost:8888/hvoil',    // Use https://webdevstudios.com/:3000 to use BrowserSync.
 		'watchOptions': {
 			'debounceDelay': 1000  // Wait 1 second before injecting.
 		}

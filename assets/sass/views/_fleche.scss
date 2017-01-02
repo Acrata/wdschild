@@ -1,0 +1,161 @@
+#trigger {
+     position: fixed;
+     top:0;
+     right:0;
+     button {
+         width:120px;
+         height:120px;
+         padding: 20px;
+
+     }
+}
+
+/*****  FLECHE *****/
+.fleche, .lang-btn-group ul{
+  display:flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+.lang-btn-group ul li {
+  list-style: none;
+  padding: 12px;
+}
+
+.trigger {
+  position: relative;
+  background: #FFF;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  /*icon replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+  transform: scale(.7);
+  z-index:22;
+}
+
+.trigger span,
+.trigger span::before,
+.trigger span::after {
+  position: absolute;
+  width: 44px;
+  height: 3px;
+  background: $color-voil;
+  border-radius: 4px;
+}
+
+.trigger span {
+  top: calc(50% - 2px);
+  left: calc(50% - 22px);
+  transition: transform 0.3s;
+}
+
+.trigger span::before,
+.trigger span::after {
+  content: "";
+  left: 0;
+  height:4px;
+  transition: transform 0.4s, width 0.4s, opacity 0.1s;;
+}
+
+.trigger span::before {
+  bottom: 12px;
+}
+
+.trigger span::after {
+  top: 12px;
+}
+
+.fleche .trigger:hover span {
+  transform: rotate(180deg);
+}
+.fleche .trigger:hover span::before {
+  transform: translate(-2px, 5px) rotate(-45deg);
+  width: 50%;
+}
+.fleche .trigger:hover span::after {
+  transform: rotate(45deg);
+  transform: translate(-2px, -5px) rotate(45deg);
+  width: 50%;
+}
+.is-open + .fleche .trigger {
+  transform: rotate(90deg);
+  transform: translate(-2px, -5px) rotate(90deg);
+  width: 50%;
+}
+/**
+ * partials/lang
+ * ---
+ */
+.button {
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  display: block;
+  position: relative;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #ffb5b5;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 10;
+  color: #323232;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button:after {
+    position: absolute !important;
+  content: "";
+  width: 34px;
+  height: 34px;
+  display: block;
+  position: relative;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  right: 2px;
+  top: 2px;
+  background-color: #ff5555;
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 1\9;
+  visibility: visible\9;
+  display: none\9;
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  z-index: -1;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.button:hover:after {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  display: block\9;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
